@@ -14,7 +14,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: jiro4989/setup-nim-action@v1
     - name: Install libcmark
-      run: sudo apt-get install libcmark-dev
+      run: |
+        sudo apt-get update
+        sudo apt-get install libcmark-dev
     - name: Run tests
       run: nimble test
 
