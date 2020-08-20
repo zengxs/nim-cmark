@@ -129,7 +129,62 @@ proc cmark_node_last_child*(node: NodePtr): NodePtr {.importc.}
   ## `cmark_node *cmark_node_last_child(cmark_node *node);`
 
 
+# === Iterator ===
+
+proc cmark_iter_new*(root: NodePtr): IterPtr {.importc.}
+  ## Creates a new iterator starting at `root`.
+  ##
+  ## The current node and event type are undefined until `cmark_iter_next`
+  ## is called for the first time.
+  ##
+  ## The memory allocated for the iterator should be released using
+  ## `cmark_iter_free` when it is no longer needed.
+  ##
+  ## Native function signature:
+  ## `cmark_iter *cmark_iter_new(cmark_node *root);`
+
+proc cmark_iter_free*(iter: IterPtr): void {.importc.}
+  ## Frees the memory allocated for an iterator.
+  ##
+  ## Native function signature:
+  ## `void cmark_iter_free(cmark_iter *iter);`
+
+proc cmark_iter_next*(iter: IterPtr): EventType {.importc.}
+  ## Advances to the next node and returns the event type (`etEnter`,
+  ## `etExit` or `etDone`).
+  ##
+  ## Native function signature:
+  ## `cmark_event_type cmark_iter_next(cmark_iter *iter);`
+
+proc cmark_iter_get_node*(iter: IterPtr): NodePtr {.importc.}
+  ## Returns the current node.
+  ##
+  ## Native function signature:
+  ## `cmark_node *cmark_iter_get_node(cmark_iter *iter);`
+
+proc cmark_iter_get_event_type*(iter: IterPtr): EventType {.importc.}
+  ## Returns the current event type.
+  ##
+  ## Native function signature:
+  ## `cmark_event_type cmark_iter_get_event_type(cmark_iter *iter);`
+
+proc cmark_iter_get_root*(iter: IterPtr): NodePtr {.importc.}
+  ## Returns the root node.
+  ##
+  ## Native function signature:
+  ## `cmark_node *cmark_iter_get_root(cmark_iter *iter);`
+
+proc cmark_iter_reset*(iter: IterPtr, node: NodePtr, event: EventType): void {.importc.}
+  ## Resets the iterator so that the current node is 'current' and
+  ## the event type is 'event_type'.  The new current node must be a
+  ## descendant of the root node or the root node itself.
+  ##
+  ## Native function signature:
+  ## `void cmark_iter_reset(cmark_iter *iter, cmark_node *current, cmark_event_type event_type);`
+
+
 # === Parsing ===
+
 proc cmark_parse_document*(text: cstring, len: csize_t, opt: cint): NodePtr {.importc.}
   ## **Simple interface**
   ##
