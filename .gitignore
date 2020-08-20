@@ -1,0 +1,10 @@
+nimcache/
+nimblecache/
+htmldocs/
+
+tests/*
+!tests/*.nims
+!tests/*.nim
+
+*.exe
+*.out
