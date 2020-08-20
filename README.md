@@ -20,7 +20,7 @@ Windows
 > Refer to <https://github.com/commonmark/cmark#installing-windows>.
 
 
-## Getting Start
+## Getting Started
 ~~~nim
 import cmark
 

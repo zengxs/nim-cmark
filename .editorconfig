@@ -13,3 +13,6 @@ trim_trailing_whitespace = false
 
 [*.{nim, nims, nimble}]
 indent_size = 2
+
+[*.{yml, yaml}]
+indent_size = 2
