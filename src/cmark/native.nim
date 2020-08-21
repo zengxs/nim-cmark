@@ -2,7 +2,7 @@ import os
 
 include "./constants"
 
-{.passL: joinPath(currentSourcePath.parentDir(), r"../../libcmark/build/src/libcmark.a").}
+{.passL: joinPath(currentSourcePath.parentDir(), r"../libcmark.a").}
 
 type
   NodeType* = enum ## cmark node types.

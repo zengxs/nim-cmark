@@ -6,5 +6,9 @@ tests/*
 !tests/*.nims
 !tests/*.nim
 
+*.a
+*.dll
+*.so
+*.dylib
 *.exe
 *.out
