@@ -1,6 +1,24 @@
 include "./constants"
 
-{.link: "../../libcmark/build/src/libcmark.a".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/blocks.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/buffer.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/cmark.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/cmark_ctype.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/commonmark.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/houdini_href_e.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/houdini_html_e.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/houdini_html_u.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/html.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/inlines.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/iterator.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/latex.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/man.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/node.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/references.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/render.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/scanners.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/utf8.c.o".}
+{.link: "../../libcmark/build/src/CMakeFiles/libcmark_static.dir/xml.c.o".}
 
 type
   NodeType* = enum ## cmark node types.
