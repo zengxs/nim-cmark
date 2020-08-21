@@ -1,24 +1,6 @@
 include "./constants"
 
-{.compile: "../../libcmark/src/blocks.c".}
-{.compile: "../../libcmark/src/buffer.c".}
-{.compile: "../../libcmark/src/cmark.c".}
-{.compile: "../../libcmark/src/cmark_ctype.c".}
-{.compile: "../../libcmark/src/commonmark.c".}
-{.compile: "../../libcmark/src/houdini_href_e.c".}
-{.compile: "../../libcmark/src/houdini_html_e.c".}
-{.compile: "../../libcmark/src/houdini_html_u.c".}
-{.compile: "../../libcmark/src/html.c".}
-{.compile: "../../libcmark/src/inlines.c".}
-{.compile: "../../libcmark/src/iterator.c".}
-{.compile: "../../libcmark/src/latex.c".}
-{.compile: "../../libcmark/src/man.c".}
-{.compile: "../../libcmark/src/node.c".}
-{.compile: "../../libcmark/src/references.c".}
-{.compile: "../../libcmark/src/render.c".}
-{.compile: "../../libcmark/src/scanners.c".}
-{.compile: "../../libcmark/src/utf8.c".}
-{.compile: "../../libcmark/src/xml.c".}
+{.link: "../../libcmark/build/src/libcmark.a".}
 
 type
   NodeType* = enum ## cmark node types.
