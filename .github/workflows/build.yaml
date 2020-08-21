@@ -7,26 +7,29 @@ on:
     branches: [ master ]
 
 jobs:
-  build-linux-shared:
+  build-for-linux:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - uses: jiro4989/setup-nim-action@v1
-    - name: Install libcmark
-      run: |
-        sudo apt-get update
-        sudo apt-get install libcmark-dev
     - name: Run tests
       run: nimble test
 
-  build-macos-shared:
+  build-for-macos:
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
     - uses: jiro4989/setup-nim-action@v1
-    - name: Install libcmark
-      run: brew install cmark
+    - name: Run tests
+      run: nimble test
+
+  build-for-windows:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: jiro4989/setup-nim-action@v1
     - name: Run tests
       run: nimble test
