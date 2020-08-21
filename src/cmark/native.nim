@@ -179,6 +179,80 @@ proc cmark_iter_reset*(iter: IterPtr, node: NodePtr, event: EventType): void {.i
   ## `void cmark_iter_reset(cmark_iter *iter, cmark_node *current, cmark_event_type event_type);`
 
 
+# === Accessors ===
+proc cmark_node_get_type*(node: NodePtr): NodeType {.importc.}
+
+proc cmark_node_get_type_string*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_get_literal*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_literal*(node: NodePtr, content: cstring): cint {.importc.}
+
+proc cmark_node_get_heading_level*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_set_heading_level*(node: NodePtr, level: cint): cint {.importc.}
+
+proc cmark_node_get_list_type*(node: NodePtr): ListType {.importc.}
+
+proc cmark_node_set_list_type*(node: NodePtr, listType: ListType): cint {.importc.}
+
+proc cmark_node_get_list_delim*(node: NodePtr): DelimType {.importc.}
+
+proc cmark_node_set_list_delim*(node: NodePtr, delim: DelimType): cint {.importc.}
+
+proc cmark_node_get_list_start*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_set_list_start*(node: NodePtr, start: cint): cint {.importc.}
+
+proc cmark_node_get_list_tight*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_set_list_tight*(node: NodePtr, tight: cint): cint {.importc.}
+
+proc cmark_node_get_fence_info*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_fence_info*(node: NodePtr, info: cstring) {.importc.}
+
+proc cmark_node_get_url*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_url*(node: NodePtr, url: cstring): cint {.importc.}
+
+proc cmark_node_get_title*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_title*(node: NodePtr, title: cstring): cint {.importc.}
+
+proc cmark_node_get_on_enter*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_on_enter*(node: NodePtr, onEnter: cstring): cint {.importc.}
+
+proc cmark_node_get_on_exit*(node: NodePtr): cstring {.importc.}
+
+proc cmark_node_set_on_exit*(node: NodePtr, onExit: cstring): cint {.importc.}
+
+proc cmark_node_get_start_line*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_get_start_column*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_get_end_line*(node: NodePtr): cint {.importc.}
+
+proc cmark_node_get_end_column*(node: NodePtr): cint {.importc.}
+
+
+# === Tree Manipulation ===
+proc cmark_node_unlink*(node: NodePtr): void {.importc.}
+
+proc cmark_node_insert_before*(node, sibling: NodePtr): cint {.importc.}
+
+proc cmark_node_insert_after*(node, sibling: NodePtr): cint {.importc.}
+
+proc cmark_node_replace*(oldnode, newnode: NodePtr): cint {.importc.}
+
+proc cmark_node_prepend_child*(node, child: NodePtr): cint {.importc.}
+
+proc cmark_node_append_child*(node, child: NodePtr): cint {.importc.}
+
+proc cmark_consolidate_text_nodes*(root: NodePtr): void {.importc.}
+
+
 # === Parsing ===
 
 proc cmark_parse_document*(text: cstring, len: csize_t, opt: cint): NodePtr {.importc.}
@@ -204,6 +278,10 @@ proc cmark_parser_free*(p: ParserPtr): void {.importc.}
   ##
   ## Native function signature:
   ## `void cmark_parser_free(cmark_parser *parser);`
+
+proc cmark_parser_feed*(parser: ParserPtr, buffer: cstring, len: csize_t): void {.importc.}
+
+proc cmark_parser_finish*(parser: ParserPtr): NodePtr {.importc.}
 
 
 # === Rendering ===
